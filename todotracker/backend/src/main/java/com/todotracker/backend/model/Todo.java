@@ -85,7 +85,6 @@ public class Todo {
                 "To-Do Name: " + todoName + "\n" +
                 "Assigned To: " + userName + "\n" +
                 "Description: " + description + "\n" +
-                "Date Created: " + dateCreated + "\n" +
-                "To-Do Name: " + todoName + "\n";
+                "Date Created: " + dateCreated + "\n";
     }
 }
