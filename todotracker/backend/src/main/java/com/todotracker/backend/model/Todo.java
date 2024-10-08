@@ -23,6 +23,8 @@ public class Todo {
         this.isComplete = isComplete;
     }
 
+    public Todo() { }
+
     public int getTodoId() {
         return todoId;
     }

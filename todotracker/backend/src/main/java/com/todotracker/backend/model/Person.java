@@ -6,6 +6,7 @@ public class Person {
     private String userName;
     private String userLogin;
     private String userPass;
+    private Boolean isAdmin;
 
     public Person(int userId, String userName, String userLogin, String userPass) {
         this.userId = userId;
@@ -13,6 +14,8 @@ public class Person {
         this.userLogin = userLogin;
         this.userPass = userPass;
     }
+
+    public Person() { }
 
     public int getUserId() {
         return userId;
@@ -30,6 +33,10 @@ public class Person {
         return userPass;
     }
 
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
     public void setUserId(int userId) {
         this.userId = userId;
     }
@@ -44,6 +51,10 @@ public class Person {
 
     public void setUserPass(String userPass) {
         this.userPass = userPass;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
     }
 
     @Override
