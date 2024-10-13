@@ -14,6 +14,12 @@ public class Person {
         this.userLogin = userLogin;
         this.userPass = userPass;
     }
+    public Person(String userName, String userLogin, String userPass, boolean isAdmin) {
+        this.userName = userName;
+        this.userLogin = userLogin;
+        this.userPass = userPass;
+        this.isAdmin = isAdmin;
+    }
 
     public Person() { }
 

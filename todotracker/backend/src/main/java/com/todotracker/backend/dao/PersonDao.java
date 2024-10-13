@@ -7,7 +7,7 @@ public interface PersonDao {
 
     List<Person> getUsers();
     Person getUserById(int id);
-    Person getUsersByUserName(String userName);
+    Person getUserByUserName(String userName);
     Person createUser(Person person);
     Person updateUser(Person person);
     int deleteUser(int id);
