@@ -22,6 +22,7 @@ public class JdbcPersonDao implements PersonDao{
     public List<Person> getUsers() {
         List<Person> persons = new ArrayList<>();
         String sql = "select * from person;";
+
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while (results.next()) {
