@@ -65,6 +65,12 @@ public class JdbcTodoDaoTests extends BaseDaoTests {
     }
 
     @Test
+    public void getTodosByUserLogin_returns_todos() {
+        List<Todo> todos = dao.getTodosByUserLogin("alegair");
+        Assert.assertEquals(1, todos.size());
+    }
+
+    @Test
     public void getTodosByDateCreated_returns_todos() {
         List<Todo> todos = dao.getTodosByDateCreated(LocalDate.parse("2024-11-01"));
         Assert.assertEquals(2, todos.size());

@@ -11,6 +11,7 @@ public interface TodoDao {
     Todo getTodoById(int id);
     Todo getTodoByName(String todoName);
     List<Todo> getTodosByUserId(int userId);
+    List<Todo> getTodosByUserLogin(String userLogin);
     List<Todo> getTodosByDateCreated(LocalDate dateCreated);
     List<Todo> getTodosByDateCompleted(LocalDate dateCompleted);
     Todo createTodo(Todo todo);

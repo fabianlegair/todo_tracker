@@ -1,11 +1,13 @@
 package com.todotracker.backend.dao;
 
 import com.todotracker.backend.exception.DaoException;
+import com.todotracker.backend.model.Person;
 import com.todotracker.backend.model.Todo;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import com.todotracker.backend.dao.JdbcPersonDao;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -84,6 +86,27 @@ public class JdbcTodoDao implements TodoDao{
 
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userId);
+            while (results.next()) {
+                Todo todo = mapRowToTodo(results);
+                todos.add(todo);
+            }
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException("Unable to connect to server or database.", e);
+        }
+
+        return todos;
+    }
+
+    @Override
+    public List<Todo> getTodosByUserLogin(String userLogin) {
+        List<Todo> todos = new ArrayList<>();
+        String sql = "select * from todo " +
+                "where user_id = " +
+                "(select user_id from person " +
+                "where user_login = ?)";
+
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userLogin);
             while (results.next()) {
                 Todo todo = mapRowToTodo(results);
                 todos.add(todo);
