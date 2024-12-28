@@ -103,7 +103,7 @@ public class JdbcTodoDao implements TodoDao{
         String sql = "select * from todo " +
                 "where user_id = " +
                 "(select user_id from person " +
-                "where user_login = ?)";sa
+                "where user_login = ?)";
 
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql, userLogin);

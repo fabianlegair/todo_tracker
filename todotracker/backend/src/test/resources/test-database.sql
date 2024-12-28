@@ -1,3 +1,5 @@
+drop table if exists person cascade;
+drop table if exists todo;
 create table person (
     user_id serial not null,
     user_name varchar(64) unique	 not null,

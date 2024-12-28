@@ -5,11 +5,13 @@ import com.todotracker.backend.dao.JdbcPersonDao;
 import com.todotracker.backend.dao.JdbcTodoDao;
 import com.todotracker.backend.dao.TodoDao;
 import com.todotracker.backend.model.Todo;
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.List;
@@ -21,6 +23,7 @@ public class JdbcTodoDaoTests extends BaseDaoTests {
             "Put water inside of water bottle", LocalDate.parse("2024-11-20"), false);
     private final Todo updateTodo = new Todo(1, "Wash car", 1, "Alesha needs to wash her car",
             LocalDate.parse("2024-11-11"), LocalDate.parse("2024-11-20"), true);
+
 
     @Before
     public void setup() {

@@ -113,10 +113,12 @@ public class JdbcPersonDao implements PersonDao{
     @Override
     public int deleteUser(int id) {
         int numberOfRows = 0;
-        String sql = "delete from person where user_id = ?;";
+        String todoSql = "delete from todo where user_id = ?;";
+        String personSql = "delete from person where user_id = ?;";
 
         try {
-            numberOfRows = jdbcTemplate.update(sql, id);
+            jdbcTemplate.update(todoSql, id);
+            numberOfRows = jdbcTemplate.update(personSql, id);
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException("Unable to connect to server or database.", e);
         } catch (DataIntegrityViolationException e) {
