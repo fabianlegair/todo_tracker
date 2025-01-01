@@ -1,21 +1,15 @@
 package com.todotracker.backend.dao;
 
 import com.todotracker.backend.exception.DaoException;
-import com.todotracker.backend.model.Person;
 import com.todotracker.backend.model.Todo;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-import com.todotracker.backend.dao.JdbcPersonDao;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
 public class JdbcTodoDao implements TodoDao{
 

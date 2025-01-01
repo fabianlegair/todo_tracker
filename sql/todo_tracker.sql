@@ -1,6 +1,7 @@
 begin transaction;
 
-drop table if exists person, todo;
+drop table if exists person cascade
+drop table if exists todo;
 
 create table person (
     user_id serial not null,

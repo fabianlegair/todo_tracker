@@ -10,9 +10,7 @@
 //
 //    private final TodoDao todoDao;
 //
-//    public TodoController() {
-//        this.todoDao = new JdbcTodoDao();
+//    public TodoController(JdbcTemplate jdbcTemplate) {
+//        this.todoDao = new JdbcTodoDao(jdbcTemplate);
 //    }
-//
-//
 //}
