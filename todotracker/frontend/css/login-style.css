@@ -1,0 +1,29 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgb(194, 220, 235), rgb(243, 251, 255));
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+        ". header ."
+        ". login-box ."
+        ". . .";
+}
+
+header {
+    grid-area: header;
+}
+
+#header-div h1, #header-div h3 {
+    margin: 0;
+}
+
+main {
+    grid-area: login-box;
+}
+
+#login-box {
+    background-color: white;
+}
